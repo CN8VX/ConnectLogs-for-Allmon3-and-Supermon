@@ -167,7 +167,7 @@ For any questions or issues:
 
 Elle est compatible avec Allmon3 et Supermon, et offre une **interface moderne et intuitive** pour consulter l’historique des connexions.
 
-Lorsque **AllStarLink 3** est installé sans **Supermon**, il est nécessaire d’**activer la journalisation des connexions et déconnexions pour Allmon3** en installant **[Logfils for ASL3](https://github.com/CN8VX/logfils-asl3)**.
+Lorsque **AllStarLink 3** est installé sans **Supermon**, il est nécessaire d’**activer la journalisation des connexions et déconnexions pour Allmon3** en installant **[Logfils for ASL3](https://github.com/CN8VX/logfils-asl3/tree/main?tab=readme-ov-file#français)**.
 
 Si **Supermon** est installé, il suffit d’**[activer la journalisation des connexions et déconnexions](https://www.dmr-maroc.com/astuces_tips_asl3.php#Activer_le_journal)** et de **[configurer la rotation des fichiers de logs](https://www.dmr-maroc.com/astuces_tips_asl3.php#rotation_log)** afin d’assurer une gestion optimale des journaux.
 
