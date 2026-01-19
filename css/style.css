@@ -1,0 +1,563 @@
+/*###################################################"
+style.css
+---------
+Créée par CN8VX Youness
+Version: 4.0
+Date de creation: 2022
+Mise à jour: 2026
+Date de La dernière  mise à jour: 05/01/2026
+style.css pour les pages logs AllStar et EchoLink
+###################################################*/
+
+:root {
+  --primary-color: #1a3c6e;
+  --secondary-color: #3b73c5;
+  --accent-color: #ff6b01;
+  --background-color: #f5f9ff;
+  --table-header-bg: #1a3c6e;
+  --table-row-even: #f2f6fc;
+  --table-row-odd: #ffffff;
+  --table-border: #d1e1ff;
+  --connect-color: #228b22;
+  --disconnect-color: #cc0000;
+  --link-color: #0056b3;
+  --text-color: #333333;
+  --light-text: #ffffff;
+  --Invalidpass-color: #cc0000;
+  --code-bg: #f0f0f0;
+  --sysinfo-bg: #f2f6fc;
+  --footer-bg: #f5f9ff;
+  --primaryclr-logtile: #1a3c6e;
+  --secondaryclr-logtile: #3b73c5;
+  --bg-log-input: #e8eef8;
+  --accent-light: #1e88e5;
+  --accent-secondary: #0a4d8c;
+  --secondaryclr-button: #1a3c6e;
+  --primaryclr-button: #3b73c5;
+}
+
+/* Variables pour le mode Dark - Base #1a1a1a */
+[data-theme="dark"] {
+  --primary-color: #3d85c6;
+  --secondary-color: #5ba3d0;
+  --accent-color: #ff8533;
+  --background-color: #1a1a1a;
+  --table-header-bg: #252525;
+  --table-row-even: #1a1a1a;
+  --table-row-odd: #222222;
+  --table-border: #333333;
+  --connect-color: #4caf50;
+  --disconnect-color: #ef5350;
+  --link-color: #5ba3d0;
+  --text-color: #e0e0e0;
+  --light-text: #ffffff;
+  --Invalidpass-color: #ff5252;
+  --code-bg: #2a2a2a;
+  --sysinfo-bg: #222222;
+  --footer-bg: #1f1f1f;
+  --primaryclr-logtile: #252525;
+  --secondaryclr-logtile: #3a3a3a;
+  --bg-log-input: #222222;
+  --accent-light: #1e88e5;
+  --accent-secondary: #0a4d8c;
+  --secondaryclr-button: #1a3c6e;
+  --primaryclr-button: #3b73c5;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 6em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Bouton Toggle Dark/Light Mode */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--secondaryclr-logtile), var(--primaryclr-logtile));
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Icônes Sun et Moon */
+.theme-icon {
+  font-size: 25px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.sun-icon {
+  color: #ffd700;
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.moon-icon {
+  color: #e0e0e0;
+  opacity: 0;
+  transform: rotate(180deg) scale(0);
+}
+
+[data-theme="dark"] .sun-icon {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0);
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Header et logo */
+.logtile-container {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, var(--primaryclr-logtile) 10%, var(--secondaryclr-logtile) 60%);
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.logo-title {
+  color: var(--light-text);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.icm {
+  height: 50px;
+  width: auto;
+}
+
+/* Titres */
+h1 {
+  color: var(--primary-color);
+  margin: 20px 0 10px;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 8px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+h2 {
+  color: var(--secondary-color);
+  margin: 15px 0;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.colr-vrf {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--table-row-odd);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--light-text);
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: var(--table-row-even);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--table-row-odd);
+}
+
+td {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--table-border);
+  transition: background-color 0.3s ease;
+}
+
+/* État des actions */
+.action {
+  font-weight: bold;
+}
+
+.connected {
+  color: var(--connect-color);
+  position: relative;
+}
+
+.disconnected {
+  color: var(--disconnect-color);
+  position: relative;
+}
+
+.connected::before,
+.disconnected::before {
+  content: '•';
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+
+/* Liens */
+a.lien {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 1px dotted var(--link-color);
+}
+
+a.lien:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+/* Boutons */
+.button-01 {
+  background: linear-gradient(to bottom, var(--secondaryclr-button), var(--primaryclr-button));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+.button-01:hover {
+  background: linear-gradient(to bottom, var(--primaryclr-button), var(--secondaryclr-button));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Centrage de texte et d'éléments */
+.cetr {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.text-cetr {
+  text-align: center;
+  margin: 10px 0;
+  color: var(--secondary-color);
+}
+
+/* Animation clignotante pour alertes */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.clignote {
+  color: var(--disconnect-color);
+  font-weight: bold;
+  animation: blink 2s infinite;
+}
+
+/* Code inline */
+code {
+  background-color: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  color: var(--accent-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Styles pour les informations système */
+.sysinfo {
+  background-color: var(--sysinfo-bg);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 25px;
+  border: 1px solid var(--table-border);
+  transition: all 0.3s ease;
+}
+
+.sysinfo h3 {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.sysinfo table {
+  box-shadow: none;
+}
+
+.sysinfo th {
+  background-color: var(--secondary-color);
+}
+
+/* Style pour le bouton "back to top" */
+.back_to_top {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-secondary));
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.back_to_top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back_to_top:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.back_to_top:active {
+  transform: translateY(-2px);
+}
+
+.back_to_top i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Support pour les icônes FontAwesome */
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-arrow-up:before {
+  content: "↑";
+}
+
+/* Styles pour le footer */
+footer {
+  background-color: var(--footer-bg);
+  margin-top: 30px;
+  padding: 15px 0;
+  left: 0;
+  right: 0;  
+  text-align: center;
+  border-top: 1px solid var(--table-border);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+footer a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* hardcoded_info */
+.hardware-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hw-table {
+  max-width: 900px;
+  border-collapse: collapse;
+  font-size: 14px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.hw-table th, .hw-table td {
+  border: 1px solid var(--table-border);
+  padding: 8px;
+  text-align: center;
+}
+
+.hw-table th {
+  font-size: 16px;
+}
+
+.hardware-info fieldset {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid var(--table-border);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hw-table td:hover {
+  background: var(--table-row-even);
+  transition: 0.3s;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.text-hw { 
+  font-size: 120%;
+}
+
+.WebS {
+  margin-top:10px;
+}
+
+.ip-host {
+  font-size: 10px;
+}
+
+.platform-os {
+  color: var(--accent-color);
+}
+
+/* end hardcoded_info */
+
+form > label, input, form > select, form > textarea {
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Montserrat, "sans-serif";
+  box-shadow: 0px 2px 2px 2px var(--secondaryclr-logtile);
+  transition: all 0.3s ease;
+}
+
+form > label, input, form > select {
+  height: 30px;
+  padding-left: 6px;
+}
+
+.log-input {
+  background-color: var(--bg-log-input);
+}
+
+.text02 { 
+  font-size: 23px;
+  background: transparent;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+.clr-red {
+  color: var(--Invalidpass-color);
+  font-weight: bold;
+}
+
+/* Media queries pour Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .logtile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo-title {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .theme-toggle {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .theme-icon {
+    font-size: 24px;
+  }
+  
+  .back_to_top {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+}
