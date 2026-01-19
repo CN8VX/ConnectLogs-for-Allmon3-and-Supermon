@@ -22,7 +22,9 @@ It is **compatible** with Allmon3 and Supermon, providing a **modern and intuiti
 
 When **AllStarLink 3** is installed without **Supermon**, it is necessary to **enable connection and disconnection logging for Allmon3** by installing **[Logfils for ASL3](https://github.com/CN8VX/logfils-asl3)**.
 
-If **Supermon** is installed, you simply need to **<a href="https://www.dmr-maroc.com/astuces_tips_asl3.php#Activer_le_journal" target="_blank" rel="noopener noreferrer">enable connection and disconnection logging</a>** and **[configure log file rotation](https://www.dmr-maroc.com/astuces_tips_asl3.php#rotation_log)** to ensure efficient log management.
+If **Supermon** is installed, you simply need to 1 **[enable connection and disconnection logging](https://www.dmr-maroc.com/astuces_tips_asl3.php#Activer_le_journal)** and **[configure log file rotation](https://www.dmr-maroc.com/astuces_tips_asl3.php#rotation_log)** to ensure efficient log management.
+
+**<a href="https://www.dmr-maroc.com/astuces_tips_asl3.php#Activer_le_journal" target="_blank" rel="noopener noreferrer">enable connection and disconnection logging</a>**
 
 The **ConnectLogs** application displays logs in **clear, well-structured tables** and offers **automatic data refresh** for **real-time monitoring** of connections.
 
