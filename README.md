@@ -59,6 +59,7 @@ cd /var/www/html
 
 ```bash
 sudo git clone https://github.com/CN8VX/ConnectLogs-for-Allmon3-and-Supermon.git connectlogs
+cd
 ```
 3. Permissions
 
@@ -211,6 +212,7 @@ cd /var/www/html
 
 ```bash
 sudo git clone https://github.com/CN8VX/ConnectLogs-for-Allmon3-and-Supermon.git connectlogs
+cd
 ```
 3. Autorisations
 
