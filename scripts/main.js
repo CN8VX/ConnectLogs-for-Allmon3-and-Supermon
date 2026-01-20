@@ -214,8 +214,8 @@
             themeToggle.className = 'theme-toggle';
             themeToggle.setAttribute('aria-label', 'Toggle theme');
             themeToggle.innerHTML = `
-                <span class="theme-icon sun-icon">☀️</span>
-                <span class="theme-icon moon-icon">🌙</span>
+                <span class="theme-icon sun-icon">🌙</span>
+                <span class="theme-icon moon-icon">☀️</span>
             `;
             document.body.appendChild(themeToggle);
         }
@@ -274,5 +274,6 @@
         initThemeToggle,
         config: CONFIG
     };
+
 
 })();
