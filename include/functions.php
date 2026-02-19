@@ -242,29 +242,25 @@ function getEchoLinkLogs() {
             // Parse EchoLink log format
             // Analyser le format du log EchoLink
             if (preg_match(
-                '/^\w{3} (\w{3}) (\d{1,2}) (\d{2}:\d{2}:\d{2}) \+01 (\d{4}) == (\d+) (Connected|Disconnected) EchoLink (\d+) (<=IN==|=OUT=>|=v=) (.*?) \[EchoLink (\d+)\] \((.*?)\)/',
+                '/^(.+?) == (\d+) (Connected|Disconnected) EchoLink (\d+) (<=IN==|=OUT=>|=v=) (.*?) \[EchoLink (\d+)\] \((.*?)\)/',
                 $line,
                 $matches
             )) {
 
-                $month_en = $matches[1];
-                $day      = str_pad($matches[2], 2, '0', STR_PAD_LEFT);
-                $time     = $matches[3];
-                $year     = $matches[4];
+                $datetime_raw = $matches[1];
+                // $matches[2] = local node (non utilisé)
+                $action       = $matches[3];
+                $node_id      = $matches[7];
+                $symbol       = $matches[5];
+                $callsign     = trim($matches[6]);
+                $ip           = trim($matches[8]);
 
-                $action   = $matches[6];
-                $symbol   = $matches[8];
-                $callsign = trim($matches[9]);
-                $node_id  = $matches[10];
-                $ip       = trim($matches[11]);
-
-                // Build datetime
-                // Construire la date/heure
-                $date_str = "$day $month_en $year $time";
-                $datetime = date('d-m-Y H:i:s', strtotime($date_str));
+                // Format date and time
+                // Formater la date et l'heure
+                $datetime = date('d-m-Y H:i:s', strtotime($datetime_raw));
 
                 // Normalize connection state
-                // Normaliser l’état de connexion
+                // Normaliser l'état de connexion
                 if (in_array($symbol, ['=OUT=>', '<=IN=='])) {
                     $action = 'Connected';
                 } elseif ($symbol === '=v=') {
@@ -365,4 +361,5 @@ function getEchoLinkInfo() {
         "node" => ($node !== "000000" ? $node : "")
     ];
 }
+
 
