@@ -1,5 +1,14 @@
 <?php
 
+// ============================
+// TIMEZONE CONFIGURATION
+// ============================
+// Set your local timezone here
+// Examples: 'Africa/Casablanca', 'Europe/Paris', 'America/New_York'
+// Full list: https://www.php.net/manual/en/timezones.php
+$timezone = 'Africa/Casablanca';
+date_default_timezone_set($timezone);
+
 // --------------------------------------------------
 // Log configuration
 // Configuration des logs
