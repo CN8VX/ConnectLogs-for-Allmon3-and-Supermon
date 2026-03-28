@@ -40,12 +40,18 @@ $log_filenames = [
 // If you are using ConnectLogs with Supermon, use:
 // "/var/www/html/supermon/astdb.txt"
 //
+// ⚠ If you have installed Logfils for ASL3 v2.0, use:
+// "/var/lib/asterisk/astdb.txt"
+//
 // Chemin du fichier astdb.txt
-// Si vous utilisez ConnectLogs avec Allmon3 , utilisez :
+// Si vous utilisez ConnectLogs avec Allmon3, utilisez :
 // "/opt/logfils/astdb.txt"
 // Si vous utilisez ConnectLogs avec Supermon, utilisez :
 // "/var/www/html/supermon/astdb.txt"
-define("ASTDB_FILE", "/opt/logfils/astdb.txt");
+//
+// ⚠ Si vous avez installé Logfils for ASL3 v2.0, utilisez :
+// "/var/lib/asterisk/astdb.txt"
+define("ASTDB_FILE", "/var/lib/asterisk/astdb.txt");
 
 
 // --------------------------------------------------
