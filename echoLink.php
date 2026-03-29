@@ -22,8 +22,8 @@ if ($CONFIG['login_required'] && (!isset($_SESSION['logged_in']) || $_SESSION['l
   <!-- Balises meta et informations de la page -->
   <meta name="title" content="Connection logs for AllStar and EchoLink By CN8VX" />
   <meta name="description" content="Connection logs for AllStar and EchoLink." />
-  <meta property="og:image" content="img/M.A.R.R.I_trans.png">
-  <link rel="shortcut icon" href="img/M.A.R.R.I_trans.png">
+  <meta property="og:image" content="img/logo.png">
+  <link rel="shortcut icon" href="img/logo.png">
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
   <!-- JavaScript -->
