@@ -1,5 +1,5 @@
 # ConnectLogs-for-Allmon3-and-Supermon
-![Version](https://img.shields.io/badge/version-4.2-blue.svg)
+![Version](https://img.shields.io/badge/version-4.3-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Debian%2011%2F12+-orange.svg)
 ![PHP](https://img.shields.io/badge/PHP-7.4+-purple.svg)
 
