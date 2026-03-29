@@ -4,11 +4,11 @@
 <footer>
   <div class="footer-content">
     <p>SYSOP <a href="https://www.qrz.com/db/<?php echo $SYSOP; ?>" target="_blank"><?php echo $SYSOP; ?></a> |  
-      Connection logs for AllStarLink 3 and EchoLink &copy; <?php echo date('Y'); ?> 
+      Connection logs for AllStarLink 3 and EchoLink &copy; 2025 - <?php echo date('Y'); ?> 
       <a href="https://www.dmr-maroc.com" target="_blank">DMR-MAROC</a> | 
       Developed by <a href="https://www.qrz.com/db/CN8VX" target="_blank">CN8VX</a>
       with the collaboration of <a href="https://www.qrz.com/db/CN8EAA" target="_blank">CN8EAA</a>.
     </p>
-    <p class="version">Version 4.2.0</p>
+    <p class="version">Version 4.3</p>
   </div>
 </footer>
