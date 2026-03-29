@@ -60,7 +60,7 @@ if ($CONFIG['login_required'] && (!isset($_SESSION['logged_in']) || $_SESSION['l
 &nbsp;
 <?php if (!empty($allstar_logs)): ?>
   <table>
-    <tr><th>Date</th><th>Action</th><th>Node</th><th>Desc / Call</th><th>Info</th></tr>
+    <tr><th>Date</th><th>Action</th><th>Node</th><th>Desc / Call</th><th>Info</th><th>IP</th></tr>
     <?php foreach ($allstar_logs as $log): ?>
       <tr>
         <td><?= $log['datetime'] ?></td>
@@ -76,6 +76,7 @@ if ($CONFIG['login_required'] && (!isset($_SESSION['logged_in']) || $_SESSION['l
           </a>
         </td>
         <td class="info"><?= $log['info'] ?></td>
+        <td><?= $log['ip'] ?></td>
       </tr>
     <?php endforeach; ?>
     <!-- Bouton Voir plus pour AllStar -->
