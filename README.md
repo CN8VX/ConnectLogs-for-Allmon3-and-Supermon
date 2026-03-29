@@ -317,5 +317,5 @@ Pour toute question ou problème :
 
 ---
 
-<img width="1425" height="1351" alt="connectlogs" src="https://github.com/user-attachments/assets/b4474473-249e-42ce-9545-10015d08d23d" />
+<img width="1393" height="1351" alt="connectlogs" src="https://github.com/user-attachments/assets/1a893f2f-56f2-4789-a3ae-f9c80245b881" />
 
