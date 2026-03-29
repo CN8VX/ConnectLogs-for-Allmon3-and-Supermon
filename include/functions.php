@@ -128,7 +128,7 @@ function getAllStarLogs() {
             // Parse AllStar log format
             // Analyser le format du log AllStar
             if (preg_match(
-                '/^(.+?) == (\d+) (Connected|Disconnected) AllStar (\d+) (<=IN==|=OUT=>|=v=)/',
+                '/^(.+?) == (\d+) (Connected|Disconnected) AllStar (\d+) (<=IN==|=OUT=>|=v=) \(([^)]*)\)/',
                 $line,
                 $m
             )) {
@@ -137,6 +137,7 @@ function getAllStarLogs() {
                 $local_node   = $m[2];
                 $action       = $m[3];
                 $remote_node  = $m[4];
+                $ip           = trim($m[6]) ?: 'No IP';
 
                 // Format date and time
                 // Formater la date et l’heure
@@ -152,7 +153,7 @@ function getAllStarLogs() {
                     'node'      => $remote_node,
                     'indicatif' => $nodeInfo['indicatif'],
                     'info'      => $nodeInfo['info'],
-                    'ip'        => null
+                    'ip'        => $ip
                 ];
             }
         }
