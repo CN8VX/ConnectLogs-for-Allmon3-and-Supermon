@@ -314,3 +314,8 @@ Pour toute question ou problème :
 **73 de [CN8VX](https://www.qrz.com/db/CN8VX)** 📻
 
 *Si vous aimez ce projet, n'hésitez pas à mettre une ⭐ sur le dépôt !
+
+---
+
+<img width="1425" height="1351" alt="connectlogs" src="https://github.com/user-attachments/assets/b4474473-249e-42ce-9545-10015d08d23d" />
+
