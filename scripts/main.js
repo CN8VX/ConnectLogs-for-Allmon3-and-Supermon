@@ -7,6 +7,18 @@
 (function() {
     'use strict';
 
+    // Debugging utility (set DEBUG to true to enable logs)
+    //aucun message ne sera affiché dans la console si DEBUG est à false, même en cas d'erreur
+    //true pour activer les logs, false pour les désactiver
+    const DEBUG = false;
+    function log(...args) {
+        if (DEBUG) console.log(...args);
+    }
+    function error(...args) {
+        if (DEBUG) console.error(...args);
+    }
+
+
     // Configuration
     const CONFIG = {
         refreshInterval: 5000, // 5 seconds
@@ -99,7 +111,7 @@
                 }, 100);
             })
             .catch(error => {
-                console.error("Error during fetch operation:", error);
+                error("Error during fetch operation:", error);
             })
             .finally(() => {
                 isRefreshing = false;
@@ -115,10 +127,10 @@
         
         // Only enable refresh on specific pages
         if (refreshPages.includes(page)) {
-            console.log('Auto-refresh enabled for:', page);
+            log('Auto-refresh enabled for:', page);
             refreshTimer = setInterval(autoRefreshPage, CONFIG.refreshInterval);
         } else {
-            console.log('Auto-refresh disabled for:', page);
+            log('Auto-refresh disabled for:', page);
         }
     }
 
@@ -143,7 +155,7 @@
             return; // Button not present on this page
         }
 
-        console.log('Initializing back-to-top button');
+        log('Initializing back-to-top button');
 
         // Create a single scroll handler
         if (!window._backToTopHandler) {
@@ -228,7 +240,7 @@
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem(CONFIG.themeStorageKey, newTheme);
             
-            console.log('Theme switched to:', newTheme);
+            log('Theme switched to:', newTheme);
         }
         
         // Remove old listener and add new one
@@ -274,6 +286,5 @@
         initThemeToggle,
         config: CONFIG
     };
-
 
 })();
