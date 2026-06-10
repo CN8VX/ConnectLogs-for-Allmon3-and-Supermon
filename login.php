@@ -1,13 +1,13 @@
 <?php
 include 'include/functions.php';
-include 'include/config.php'; // Inclure le fichier de configuration
+include 'include/config.php'; 
 
 session_start();
 
 // Si le login n'est pas requis, rediriger directement vers index.php
 if (!$CONFIG['login_required']) {
     $_SESSION['logged_in'] = true;
-    $_SESSION['username'] = "Invité"; // Utilisateur par défaut quand le login est désactivé
+    $_SESSION['username'] = "Invité"; 
     header("Location: index.php");
     exit();
 }
@@ -20,7 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $pass = $_POST['password'];
     if (isset($USERS[$user]) && $USERS[$user] === $pass) {
         $_SESSION['logged_in'] = true;
-        $_SESSION['username'] = $user; // Pour afficher le nom de l'utilisateur
+        $_SESSION['username'] = $user; 
         header("Location: index.php");
         exit();
     } else {
